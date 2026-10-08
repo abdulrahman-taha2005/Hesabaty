@@ -1,0 +1,13 @@
+{
+  "appId": "com.hesabaty.app",
+  "appName": "Hesabaty",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "StatusBar": {
+      "overlaysWebView": false,
+      "style": "DARK",
+      "backgroundColor": "#FFFFFFFF"
+    }
+  }
+}

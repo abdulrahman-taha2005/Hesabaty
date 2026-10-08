@@ -1,0 +1,477 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  background: #f4f7fb;
+  color: #172b4d;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  padding-bottom: 90px;
+}
+
+/* الشريط العلوي */
+.topbar {
+  background: #1768c4;
+  color: white;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 22px 22px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: white;
+  color: #1768c4;
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+}
+
+.brand h2 {
+  font-size: 20px;
+}
+
+.brand span {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.notification {
+  background: #ffffff25;
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 22px;
+}
+
+/* المحتوى الرئيسي */
+.main-content {
+  max-width: 1000px;
+  margin: auto;
+  padding: 25px 5%;
+}
+
+.welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.welcome h1 {
+  font-size: 23px;
+  margin-bottom: 4px;
+}
+
+.welcome p,
+.date {
+  color: #7b879b;
+  font-size: 13px;
+}
+
+/* بطاقات الإحصائيات */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.stat-card {
+  background: white;
+  padding: 18px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 4px 15px #172b4d0a;
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 15px;
+  font-size: 23px;
+}
+
+.blue {
+  background: #e5f0ff;
+}
+
+.green {
+  background: #e1f7ec;
+}
+
+.orange {
+  background: #fff0dd;
+}
+
+.red {
+  background: #ffe6e6;
+}
+
+.stat-card p,
+.quick-card p {
+  font-size: 13px;
+  color: #738096;
+}
+
+.stat-card h3 {
+  margin-top: 5px;
+  font-size: 20px;
+}
+
+/* الأقسام */
+.section {
+  margin-top: 30px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-button {
+  border: 0;
+  background: none;
+  color: #1768c4;
+  font-size: 13px;
+}
+
+/* الإحصائيات السريعة */
+.quick-stats {
+  display: grid;
+  gap: 12px;
+}
+
+.quick-card {
+  background: white;
+  border-radius: 16px;
+  padding: 17px;
+  box-shadow: 0 4px 15px #172b4d0a;
+}
+
+.quick-card h3 {
+  color: #1768c4;
+  margin-top: 7px;
+  font-size: 20px;
+}
+
+/* حالة عدم وجود فواتير */
+.empty-state {
+  background: white;
+  border-radius: 18px;
+  padding: 30px 15px;
+  text-align: center;
+  box-shadow: 0 4px 15px #172b4d0a;
+}
+
+.empty-icon {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.empty-state h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.empty-state p {
+  color: #8490a3;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.primary-button {
+  background: #1768c4;
+  color: white;
+  border: 0;
+  border-radius: 12px;
+  padding: 11px 22px;
+  font-weight: 700;
+}
+
+/* القائمة السفلية */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 4px;
+  border-top: 1px solid #e8edf4;
+  box-shadow: 0 -4px 15px #172b4d0a;
+  z-index: 10;
+}
+
+.bottom-nav button {
+  border: 0;
+  background: transparent;
+  color: #8490a3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+}
+
+.bottom-nav button.active {
+  color: #1768c4;
+  font-weight: 700;
+}
+
+.nav-icon {
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+/* الشاشات الصغيرة */
+@media (max-width: 500px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-card {
+    padding: 14px;
+  }
+
+  .welcome h1 {
+    font-size: 19px;
+  }
+}
+
+/* الشاشات الكبيرة */
+@media (min-width: 700px) {
+  .quick-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 380px) {
+  .stat-card {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .stat-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 19px;
+  }
+
+  .stat-card h3 {
+    font-size: 16px;
+  }
+}
+
+/* ===== حساباتي — الهوية الاحترافية الجديدة ===== */
+:root {
+  --brand: #0f766e;
+  --brand-dark: #115e59;
+  --brand-soft: #ccfbf1;
+  --ink: #0f172a;
+  --muted: #64748b;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --line: #e2e8f0;
+  --danger: #dc2626;
+  --success: #059669;
+  --shadow: 0 10px 30px rgba(15, 23, 42, .07);
+}
+
+body {
+  background: #f1f5f9 !important;
+  color: var(--ink) !important;
+}
+
+.topbar {
+  background: linear-gradient(135deg, #0f766e 0%, #0f5f59 100%) !important;
+  box-shadow: 0 8px 24px rgba(15, 118, 110, .18);
+  border-radius: 0 0 26px 26px !important;
+}
+
+.brand-icon {
+  color: var(--brand) !important;
+  border-radius: 15px !important;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, .12);
+}
+
+.stat-card,
+.quick-card,
+.empty-state,
+.customer-card,
+.customer-form,
+.section-card,
+.search-box,
+.store-settings-card,
+.invoice-card {
+  border: 1px solid rgba(226, 232, 240, .9) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.stat-card,
+.quick-card,
+.customer-card,
+.section-card,
+.customer-form,
+.empty-state {
+  border-radius: 20px !important;
+}
+
+.primary-btn,
+.primary-button,
+.add-btn,
+.save-btn,
+.add-item-btn {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark)) !important;
+  border-radius: 13px !important;
+  box-shadow: 0 7px 16px rgba(15, 118, 110, .18);
+}
+
+.primary-btn:hover,
+.primary-button:hover,
+.add-btn:hover,
+.save-btn:hover,
+.add-item-btn:hover {
+  transform: translateY(-1px);
+}
+
+input,
+textarea,
+select {
+  border: 1px solid var(--line) !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  color: var(--ink) !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none !important;
+  border-color: var(--brand) !important;
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, .10) !important;
+}
+
+.text-button,
+.quick-card h3,
+.customer-balance strong {
+  color: var(--brand) !important;
+}
+
+.blue { background: #e6fffb !important; }
+.green { background: #dcfce7 !important; }
+.orange { background: #fff7ed !important; }
+.red { background: #fee2e2 !important; }
+
+.invoice-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+
+.share-btn {
+  border: 0;
+  border-radius: 12px;
+  padding: 11px 16px;
+  background: #16a34a;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 7px 16px rgba(22, 163, 74, .16);
+}
+
+.share-btn:hover { transform: translateY(-1px); }
+
+.store-logo-preview,
+.store-logo-placeholder,
+.home-store-logo,
+.home-store-logo-placeholder {
+  width: 104px !important;
+  height: 104px !important;
+  min-width: 104px;
+  min-height: 104px;
+  border-radius: 20px !important;
+  object-fit: cover !important;
+  overflow: hidden;
+}
+
+.store-logo-preview,
+.home-store-logo {
+  display: block;
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+.store-logo-placeholder,
+.home-store-logo-placeholder {
+  display: grid !important;
+  place-items: center;
+  background: linear-gradient(135deg, #ccfbf1, #f0fdfa) !important;
+  color: var(--brand-dark);
+  font-weight: 800;
+}
+
+.logo-actions {
+  gap: 8px !important;
+  flex-wrap: wrap;
+}
+
+.secondary-btn,
+.remove-logo-btn,
+.back-btn,
+.details-btn {
+  border-radius: 12px !important;
+  border: 1px solid var(--line) !important;
+}
+
+.bottom-nav {
+  border-top: 1px solid rgba(226, 232, 240, .95) !important;
+  box-shadow: 0 -10px 30px rgba(15, 23, 42, .06) !important;
+  background: rgba(255,255,255,.96) !important;
+  backdrop-filter: blur(14px);
+}
+
+@media (max-width: 600px) {
+  .main-content { padding: 20px 4%; }
+  .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .invoice-actions > button { flex: 1 1 180px; }
+}
